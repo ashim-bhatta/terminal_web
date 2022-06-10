@@ -1,0 +1,122 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  max-height: 100vw;
+  font-size: clamp(10px, 1vw, 14px);
+}
+
+@font-face {
+  font-family: 'comic_code_ligatureslight';
+  src: url('./fonts/comiccodeligatures-light-webfont.woff2') format('woff2'),
+    url('./fonts/comiccodeligatures-light-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'fira_coderegular';
+  src: url('./fonts/firacode-regular-webfont.woff2') format('woff2'),
+    url('./fonts/firacode-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: 'comic_code_ligatureslight';
+  background-color: rgb(17, 43, 51);
+  padding: 15px;
+  color: white;
+  min-height: 100vh;
+  font-size: clamp(10px, 1vw, 14px);
+}
+
+::selection {
+  background-color: rgba(0, 232, 8, 0.6);
+  background-color: #519975;
+  color: #000;
+}
+
+.main_text {
+  color: rgba(255, 170, 0, 0.6);
+  line-height: clamp(16px, 1.2vw, 22px);
+}
+
+.glow {
+  color: #519975;
+  text-shadow: 0.1px 0.1px 4px rgba(255, 255, 255, 0.583);
+}
+
+.input_line {
+  display: flex;
+  margin-top: 5px;
+  color: rgba(255, 170, 0, 0.6);
+  line-height: clamp(16px, 1.2vw, 22px);
+}
+
+.command {
+  text-shadow: 0 0 2px #888;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #519975;
+  margin-left: 5px;
+  caret-color: #519975;
+}
+.command:focus {
+  animation: PulseAttention 1.5s cubic-bezier(0.215, 0.61, 0.355, 1) forwards
+    infinite;
+}
+
+.help {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  max-width: 500px;
+}
+.social {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 15px;
+  max-width: 500px;
+}
+.social span {
+  color: #a5a127a8;
+}
+.social a {
+  color: #519975;
+  padding: 2px;
+}
+.social a:hover {
+  background-color: rgba(0, 232, 8, 0.6);
+  color: white;
+}
+.help .main_text {
+  margin-left: 30px;
+}
+.history {
+  padding: 5px 15px;
+  color: #a5277da8;
+}
+
+.invalid {
+  color: rgba(255, 0, 0, 0.5);
+  padding: 4px 0;
+}
+
+.result {
+  padding: 5px 15px;
+  color: #a5a127a8;
+}
+
+@keyframes PulseAttention {
+  50% {
+    border-color: red;
+  }
+}
+
+@media (max-width: 600px) {
+  pre {
+    font-size: 4px;
+  }
+}
